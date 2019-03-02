@@ -7,6 +7,7 @@ def nyc_pigeon_organizer(data)
     [name, {
       :color => data[:color].reduce([]) {|matching_people, (color_label, people)|
         matching_people << name if people.includes? name
+        matching_people
       }
     }]
   }.to_h
