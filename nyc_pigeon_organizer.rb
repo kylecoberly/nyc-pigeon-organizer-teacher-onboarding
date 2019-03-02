@@ -14,7 +14,7 @@ def nyc_pigeon_organizer(data)
 end
 
 def find_matches data, key
-  data[:color].reduce([]) {|matching_people, (color_label, people)|
+  data[key].reduce([]) {|matching_people, (color_label, people)|
     matching_people << name if people.includes? name
     matching_people
   }
