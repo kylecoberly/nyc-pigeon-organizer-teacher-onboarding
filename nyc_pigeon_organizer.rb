@@ -3,5 +3,11 @@ def nyc_pigeon_organizer(data)
   people = data.flat_map {|label, category|
     category.flat_map {|value, names| names}
   }.uniq
-  p people
+  people.map {|name|
+    [name, {
+      :color => data[:color].reduce([]) {|matching_people, (color_label, people)|
+        matching_people << name if people.includes? name
+      }
+    }]
+  }.to_h
 end
