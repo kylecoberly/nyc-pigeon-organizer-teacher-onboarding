@@ -13,8 +13,8 @@ def nyc_pigeon_organizer(data)
 end
 
 def find_matches data, key, name
-  data[key].reduce([]) {|matching_people, (label, people)|
-    matching_people << label if people.include? name
-    matching_people.uniq
+  data[key].reduce([]) {|matches, (label, people)|
+    matches << label if people.include? name
+    matches.uniq
   }
 end
