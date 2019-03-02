@@ -14,7 +14,7 @@ end
 
 def find_matches data, key, name
   data[key].reduce([]) {|matches, (label, people)|
-    matches << label if people.include? name
+    matches << label.to_s if people.include? name
     matches.uniq
   }
 end
