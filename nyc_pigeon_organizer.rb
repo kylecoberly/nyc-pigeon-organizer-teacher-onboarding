@@ -5,10 +5,7 @@ def nyc_pigeon_organizer(data)
   }.uniq
   people.map {|name|
     [name, {
-      :color => data[:color].reduce([]) {|matching_people, (color_label, people)|
-        matching_people << name if people.includes? name
-        matching_people
-      }
+      :color => find_matches(data, :key)
     }]
   }.to_h
 end
