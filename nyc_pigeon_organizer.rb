@@ -5,7 +5,7 @@ def nyc_pigeon_organizer(data)
   }.uniq
   people.map {|name|
     [name, {
-      :color => find_matches(data, :key)
+      :color => find_matches(data, :color)
     }]
   }.to_h
 end
